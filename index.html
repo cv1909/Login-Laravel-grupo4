@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Futurista Pro</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="login-container">
+    <h2 class="titulo">INICIAR SESIÓN</h2>
+    <form id="loginForm">
+      <input type="text" id="usuario" placeholder="Usuario" required />
+      
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Contraseña" required />
+        <span class="toggle-password" id="togglePassword">👁️</span>
+      </div>
+      
+      <div id="requisitos">
+        <p id="mayuscula">🔴 Al menos una letra mayúscula</p>
+        <p id="especial">🔴 Al menos un símbolo @ o $</p>
+      </div>
+
+      <button type="submit">Ingresar</button>
+      <p id="mensajeError"></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

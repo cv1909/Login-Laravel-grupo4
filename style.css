@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #000428, #004e92);
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  overflow: hidden;
+  height: 100vh;
+}
+
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.login-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 40px #00faff;
+  max-width: 450px;
+  margin: 100px auto;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  color: #00faff;
+  margin-bottom: 30px;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #0ff;
+  font-size: 16px;
+  outline: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input:focus {
+  background: rgba(0, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+
+.password-container {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #00faff;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00faff, #0ff);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 0 15px #00faff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #0ff, #00faff);
+  transform: scale(1.05);
+}
+
+#mensajeError {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00faff;
+}
+
+#requisitos {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+#requisitos p {
+  margin: 4px 0;
+  transition: color 0.3s;
+}
+
+#requisitos p.verificado {
+  color: #00faff;
+}
