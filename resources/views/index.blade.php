@@ -16,22 +16,27 @@
     </div>
 
     <h2 class="titulo">INICIAR SESIÓN</h2>
-    <form id="loginForm">
-      <input type="text" id="usuario" placeholder="Usuario" required />
+    <form method="POST" action="/">
+  @csrf
 
-      <div class="password-container">
-        <input type="password" id="password" placeholder="Contraseña" required />
-        <span class="toggle-password" id="togglePassword">👁️</span>
-      </div>
+  <input type="text" id="usuario" name="usuario" placeholder="Usuario" required />
 
-      <div id="requisitos">
-        <p id="mayuscula">🔴 Al menos una letra mayúscula</p>
-        <p id="especial">🔴 Al menos un símbolo @ o $</p>
-      </div>
+  <div class="password-container">
+    <input type="password" id="password" name="password" placeholder="Contraseña" required />
+    <span class="toggle-password" id="togglePassword">👁️</span>
+  </div>
 
-      <button type="submit">Ingresar</button>
-      <p id="mensajeError"></p>
-    </form>
+  <div id="requisitos">
+    <p id="mayuscula">🔴 Al menos una letra mayúscula</p>
+    <p id="especial">🔴 Al menos un símbolo @ o $</p>
+  </div>
+
+  <button type="submit">Ingresar</button>
+
+  @if (session('error'))
+    <p id="mensajeError" style="color: red;">{{ session('error') }}</p>
+  @endif
+</form>
   </div>
 
   <script src="{{ asset('js/script.js') }}"></script>
